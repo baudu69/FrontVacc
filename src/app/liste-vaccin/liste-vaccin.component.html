@@ -5,6 +5,7 @@
   <th scope="col">Nom</th>
   <th scope="col">Nombre de doses</th>
   <th scope="col">Temps entre doses</th>
+  <th scope="col">Lots</th>
   </thead>
   <tbody id="contenu">
   <tr class="tr-1" *ngFor="let unVaccin of lesVaccins">
@@ -12,6 +13,28 @@
     <td>{{unVaccin.nomVac}}</td>
     <td>{{unVaccin.nbrDoses}}</td>
     <td>{{unVaccin.tempsEntreDoses}}</td>
+    <td><button (click)="getLesLots(unVaccin.id)">Lots</button></td>
   </tr>
   </tbody>
 </table>
+<div id="tabLot" *ngIf="lesLots != undefined">
+<table class="table table-hover table-responsive-lg">
+  <thead class="thead-1">
+  <th scope="col">No de lot</th>
+  <th scope="col">Quantite Lot</th>
+  <th scope="col">Quantite Restante</th>
+  </thead>
+  <tbody>
+  <tr class="tr-1" *ngFor="let unLot of lesLots">
+    <td>{{unLot.id}}</td>
+    <td>{{unLot.QuantiteLot}}</td>
+    <td>{{unLot.QteRestante}}</td>
+  </tr>
+  </tbody>
+</table>
+  <button [disabled]="afficherForm" (click)="afficherFormAjoutLot()">Ajouter un Lot</button>
+  <form *ngIf="afficherForm" id="formAjoutLot">
+    <input type="text" id="formNoLot" placeholder="noLot" />
+    <input type="number" id="QuantiteLot" min="1" placeholder="QuantiteLot" />
+  </form>
+</div>

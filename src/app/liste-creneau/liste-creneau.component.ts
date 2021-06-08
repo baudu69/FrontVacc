@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {Vaccin} from "../metier/Vaccin";
+import {Router} from "@angular/router";
+import {VaccinService} from "../service/vaccin.service";
 
 @Component({
   selector: 'app-liste-creneau',
@@ -7,9 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListeCreneauComponent implements OnInit {
 
-  constructor() { }
+  lesVaccins: Vaccin[] | undefined
+
+  constructor(private router: Router, private vaccinService: VaccinService) { }
 
   ngOnInit(): void {
+    this.vaccinService.getLesVaccins().subscribe( (data) => {
+        this.lesVaccins = data
+      }
+    )
   }
 
 }

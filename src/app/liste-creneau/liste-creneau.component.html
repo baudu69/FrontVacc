@@ -1,1 +1,6 @@
-<p>liste-creneau works!</p>
+<h1>Reserver un creneau</h1>
+<b>Vaccin choisi : </b>
+<select name="idVaccin">
+  <option *ngFor="let unVaccin of lesVaccins" id="{{unVaccin.id}}">{{unVaccin.nomVac}}</option>
+</select>
+<button>Rechercher des creneaux</button>
