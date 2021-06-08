@@ -9,14 +9,16 @@ import { ConnexionComponent } from './connexion/connexion.component';
 import { ListeCreneauComponent } from './liste-creneau/liste-creneau.component';
 import { HttpClientModule } from '@angular/common/http';    // add this
 import { FormsModule } from '@angular/forms';    // add this
-import { AuthService } from './service/auth.service';    // add this
+import { AuthService } from './service/auth.service';
+import { ListeVaccinComponent } from './liste-vaccin/liste-vaccin.component';    // add this
 
 @NgModule({
   declarations: [
     AppComponent,
     AccueilComponent,
     ConnexionComponent,
-    ListeCreneauComponent
+    ListeCreneauComponent,
+    ListeVaccinComponent
   ],
     imports: [
         BrowserModule,

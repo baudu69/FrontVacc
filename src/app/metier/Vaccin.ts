@@ -1,6 +1,6 @@
 export class Vaccin {
-  /*public id: Number;
-  public nomVac: String;
-  public nbrDoses: String;
-  public tempsEntreDoses : String;*/
+  public id: Number | undefined;
+  public nomVac: String | undefined;
+  public nbrDoses: String | undefined;
+  public tempsEntreDoses : String | undefined;
 }

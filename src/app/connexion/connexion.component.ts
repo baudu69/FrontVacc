@@ -21,7 +21,6 @@ export class ConnexionComponent implements OnInit {
     this.serviceAuth.signIn(this.mail, this.mdp).subscribe(
       data => {
           localStorage.setItem('token', data.token);
-          localStorage.setItem('actualise', 'true');
           this.router.navigate([''])
       },
       Error => {

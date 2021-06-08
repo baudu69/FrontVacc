@@ -1,0 +1,17 @@
+<h1>Liste des vaccins proposes</h1>
+<table class="table table-hover table-responsive-lg">
+  <thead class="thead-1">
+  <th scope="col">Id</th>
+  <th scope="col">Nom</th>
+  <th scope="col">Nombre de doses</th>
+  <th scope="col">Temps entre doses</th>
+  </thead>
+  <tbody id="contenu">
+  <tr class="tr-1" *ngFor="let unVaccin of lesVaccins">
+    <td>{{unVaccin.id}}</td>
+    <td>{{unVaccin.nomVac}}</td>
+    <td>{{unVaccin.nbrDoses}}</td>
+    <td>{{unVaccin.tempsEntreDoses}}</td>
+  </tr>
+  </tbody>
+</table>
