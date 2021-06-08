@@ -25,7 +25,9 @@ export class AuthService {
 
   constructor(private httpClient: HttpClient) {
     this.httpOptions = {
-      headers: new HttpHeaders({'Content-Type': 'application/json'})
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
     };
   }
 
@@ -50,6 +52,7 @@ export class AuthService {
   }
 
   private updateData(token: string) {
+    localStorage.setItem('token', token)
     this.token = token;
     this.errors = [];
 

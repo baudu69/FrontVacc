@@ -10,7 +10,8 @@ import { ListeCreneauComponent } from './liste-creneau/liste-creneau.component';
 import { HttpClientModule } from '@angular/common/http';    // add this
 import { FormsModule } from '@angular/forms';    // add this
 import { AuthService } from './service/auth.service';
-import { ListeVaccinComponent } from './liste-vaccin/liste-vaccin.component';    // add this
+import { ListeVaccinComponent } from './liste-vaccin/liste-vaccin.component';
+import { DeconnexionComponent } from './deconnexion/deconnexion.component';    // add this
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ListeVaccinComponent } from './liste-vaccin/liste-vaccin.component';   
     AccueilComponent,
     ConnexionComponent,
     ListeCreneauComponent,
-    ListeVaccinComponent
+    ListeVaccinComponent,
+    DeconnexionComponent
   ],
     imports: [
         BrowserModule,

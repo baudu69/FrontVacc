@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from "../service/auth.service";
 import {Router} from "@angular/router";
+import {environment} from "../../environments/environment";
 
 @Component({
   selector: 'app-connexion',
@@ -21,7 +22,7 @@ export class ConnexionComponent implements OnInit {
     this.serviceAuth.signIn(this.mail, this.mdp).subscribe(
       data => {
           localStorage.setItem('token', data.token);
-          this.router.navigate([''])
+          window.location.href = environment.appURL;
       },
       Error => {
         this.message = 'Erreur lors de la connexion';

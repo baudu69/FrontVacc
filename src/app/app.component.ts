@@ -7,7 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'FrontVacc';
-  constructor() { }
+  token: string | null
+  constructor() {
+    this.token = localStorage.getItem('token')
+  }
 
   ngOnInit() {
   }

@@ -17,14 +17,17 @@
       <li class="nav-item active">
         <a class="nav-link" routerLink="">Accueil</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="listeVaccin">Liste des vaccins disponibles</a>
+      <li class="nav-item" *ngIf="token != null">
+        <a class="nav-link" routerLink="listeVaccin" >Liste des vaccins disponibles</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="listeCreneau">Reserver un creneau</a>
+      <li class="nav-item" *ngIf="token != null">
+        <a class="nav-link" routerLink="listeCreneau" >Reserver un creneau</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="connexion">Connexion</a>
+      <li class="nav-item" *ngIf="token == null">
+        <a class="nav-link" routerLink="connexion" >Connexion</a>
+      </li>
+      <li class="nav-item" *ngIf="token != null">
+        <a class="nav-link" routerLink="deconnexion">Deconnexion</a>
       </li>
     </ul>
   </div>

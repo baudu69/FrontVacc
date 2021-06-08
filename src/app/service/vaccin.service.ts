@@ -12,7 +12,10 @@ export class VaccinService {
 
   constructor(private httpClient: HttpClient) {
     this.httpOptions = {
-      headers: new HttpHeaders({'Content-Type': 'application/json'})
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'JWT ' + localStorage.getItem('token')
+      })
     };
   }
 
