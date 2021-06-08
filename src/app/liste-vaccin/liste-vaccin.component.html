@@ -33,8 +33,9 @@
   </tbody>
 </table>
   <button [disabled]="afficherForm" (click)="afficherFormAjoutLot()">Ajouter un Lot</button>
-  <form *ngIf="afficherForm" id="formAjoutLot">
-    <input type="text" id="formNoLot" placeholder="noLot" />
-    <input type="number" id="QuantiteLot" min="1" placeholder="QuantiteLot" />
+  <form *ngIf="afficherForm" id="formAjoutLot" (ngSubmit)="ajouterLot(f)" #f="ngForm">
+    <input type="number" id="formNoLot" name="formNoLot" placeholder="noLot" ngModel />
+    <input type="number" id="QuantiteLot" name="QuantiteLot" min="1" placeholder="QuantiteLot"  ngModel/>
+    <input type="submit" value="Valider">
   </form>
 </div>
