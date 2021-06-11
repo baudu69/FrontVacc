@@ -21,6 +21,7 @@ export class ConnexionComponent implements OnInit {
   login(): void {
     this.serviceAuth.signIn(this.mail, this.mdp).subscribe(
       data => {
+        this.serviceAuth.refreshToken()
           localStorage.setItem('token', data.token);
           window.location.href = environment.appURL;
       },

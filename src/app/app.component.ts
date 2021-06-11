@@ -8,8 +8,10 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'FrontVacc';
   token: string | null
+  username: string | null | undefined
   constructor() {
     this.token = localStorage.getItem('token')
+    this.username = localStorage.getItem("username")
   }
 
   ngOnInit() {

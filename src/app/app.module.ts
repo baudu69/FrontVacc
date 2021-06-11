@@ -11,7 +11,9 @@ import { HttpClientModule } from '@angular/common/http';    // add this
 import { FormsModule } from '@angular/forms';    // add this
 import { AuthService } from './service/auth.service';
 import { ListeVaccinComponent } from './liste-vaccin/liste-vaccin.component';
-import { DeconnexionComponent } from './deconnexion/deconnexion.component';    // add this
+import { DeconnexionComponent } from './deconnexion/deconnexion.component';
+import { MesCreneauxComponent } from './mes-creneaux/mes-creneaux.component';
+import { InscriptionComponent } from './inscription/inscription.component';    // add this
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { DeconnexionComponent } from './deconnexion/deconnexion.component';    /
     ConnexionComponent,
     ListeCreneauComponent,
     ListeVaccinComponent,
-    DeconnexionComponent
+    DeconnexionComponent,
+    MesCreneauxComponent,
+    InscriptionComponent
   ],
     imports: [
         BrowserModule,

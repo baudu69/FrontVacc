@@ -1,0 +1,13 @@
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <form (submit)="inscription()">
+      <input type="text" [(ngModel)]="username"  id="username" class="fadeIn first" name="login" placeholder="Nom d'utilisateur">
+      <input type="email" [(ngModel)]="mail"  id="mail" class="fadeIn second" name="login" placeholder="Email">
+      <input type="text" [(ngModel)]="nom" id="nom" class="fadeIn third" name="login" placeholder="Nom">
+      <input type="text" [(ngModel)]="prenom"  id="prenom" class="fadeIn fourth" name="login" placeholder="Prenom">
+      <input type="password" [(ngModel)]="password"  id="password" class="fadeIn fifth" name="login" placeholder="Mot de passe">
+      <input type="password"  id="confpassword" class="fadeIn sixth" name="login" placeholder="Confirmation Mot de passe">
+      <input type="submit" class="fadeIn seventh" value="Inscription">
+    </form>
+  </div>
+</div>

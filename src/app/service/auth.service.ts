@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders, HttpParamsOptions} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {environment} from "../../environments/environment";
+import {User} from "../metier/User";
 
 @Injectable({
   providedIn: 'root'
@@ -39,6 +40,10 @@ export class AuthService {
     return this.httpClient.post<any>(environment.apiURL + 'api-token-auth/', JSON.stringify(unVisiteur), this.httpOptions);
   }
 
+  inscription(unUser: User): Observable<any> {
+    return this.httpClient.post<any>(environment.apiURL + 'api/inscription', JSON.stringify(unUser), this.httpOptions);
+  }
+
   public refreshToken() {
     this.httpClient.post('/api-token-refresh/', JSON.stringify({token: this.token}), this.httpOptions).subscribe(
       data => {
@@ -61,5 +66,8 @@ export class AuthService {
     const token_decoded = JSON.parse(window.atob(token_parts[1]));
     this.token_expires = new Date(token_decoded.exp * 1000);
     this.username = token_decoded.username;
+    if (typeof this.username === "string") {
+      localStorage.setItem('username', this.username)
+    }
   }
 }

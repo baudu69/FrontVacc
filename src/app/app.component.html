@@ -23,8 +23,17 @@
       <li class="nav-item" *ngIf="token != null">
         <a class="nav-link" routerLink="listeCreneau" >Reserver un creneau</a>
       </li>
+      <li class="nav-item" *ngIf="token != null">
+        <a class="nav-link" routerLink="mesCreneaux" >Mes creneaux</a>
+      </li>
       <li class="nav-item" *ngIf="token == null">
         <a class="nav-link" routerLink="connexion" >Connexion</a>
+      </li>
+      <li class="nav-item" *ngIf="token == null">
+        <a class="nav-link" routerLink="inscription" >Inscription</a>
+      </li>
+      <li class="nav-item" *ngIf="username != null">
+        <a class="nav-link" >{{username}}</a>
       </li>
       <li class="nav-item" *ngIf="token != null">
         <a class="nav-link" routerLink="deconnexion">Deconnexion</a>

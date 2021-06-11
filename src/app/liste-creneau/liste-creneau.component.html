@@ -12,9 +12,22 @@
   </thead>
   <tbody id="contenu">
   <tr class="tr-1" *ngFor="let unCreneau of lesCreneaux">
-    <td>{{unCreneau.dateCreneau}}</td>
-    <td></td>
-    <td><button>Reserver</button></td>
+    <td>{{unCreneau.dateCreneau != undefined?unCreneau.dateCreneau.getDate() + "/" + unCreneau.dateCreneau.getMonth() + "/" + unCreneau.dateCreneau.getFullYear(): ""}}</td>
+    <td>{{unCreneau.dateCreneau != undefined?unCreneau.dateCreneau.getHours() + ":" + unCreneau.dateCreneau.getMinutes(): ""}}</td>
+    <td><button (click)="reserverCreneau(unCreneau.id)">Reserver</button></td>
   </tr>
   </tbody>
 </table>
+<button (click)="afficherFormAjoutCreneau()">Ajouter un Creneau</button>
+<form (ngSubmit)="ajouterCreneau()" id="formAddCreneau" [hidden]="formAjoutCreneau">
+  <select [(ngModel)]="vaccinChoisiAjoutCreneau" (ngModelChange)="refreshFormLot()" name="idVaccin">
+    <option selected>--Choisir un Vaccin</option>
+    <option *ngFor="let leVaccin of lesVaccins" [ngValue]="leVaccin.id" id="formAdd_{{leVaccin.id}}">{{leVaccin.nomVac}}</option>
+  </select>
+  <select name="Lots" [(ngModel)]="lotChoisiAjoutCreneau" >
+    <option selected>--Choisir un Lot</option>
+    <option  *ngFor="let unLot of lesLots" [ngValue]="unLot.id" id="lot_{{unLot.noLot">{{unLot.id}} : {{unLot.QteRestante}}/{{unLot.QuantiteLot}}</option>
+  </select>
+  <input type="datetime-local" [(ngModel)]="dateAjoutLot" id="dateCreneau" />
+  <input type="submit" value="Ajouter le Creneau" />
+</form>

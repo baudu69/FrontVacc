@@ -1,0 +1,17 @@
+<h1>Creneaux Reserves</h1>
+<table class="table table-hover table-responsive-lg">
+  <thead class="thead-1">
+  <th scope="col">Date</th>
+  <th scope="col">Heure</th>
+  <th scope="col"></th>
+  </thead>
+  <tbody id="contenu">
+  <tr class="tr-1" *ngFor="let unCreneau of lesCreneaux">
+    <td>{{unCreneau.dateCreneau != undefined?unCreneau.dateCreneau.getDate() + "/" + unCreneau.dateCreneau.getMonth() + "/" + unCreneau.dateCreneau.getFullYear(): ""}}</td>
+    <td>{{unCreneau.dateCreneau != undefined?unCreneau.dateCreneau.getHours() + ":" + unCreneau.dateCreneau.getMinutes(): ""}}</td>
+    <td>
+      <button (click)="annulerReservation(unCreneau.id)">Annuler</button>
+    </td>
+  </tr>
+  </tbody>
+</table>
