@@ -56,7 +56,7 @@ export class AuthService {
     );
   }
 
-  private updateData(token: string) {
+  updateData(token: string) {
     localStorage.setItem('token', token)
     this.token = token;
     this.errors = [];
@@ -65,9 +65,7 @@ export class AuthService {
     const token_parts = this.token.split(/\./);
     const token_decoded = JSON.parse(window.atob(token_parts[1]));
     this.token_expires = new Date(token_decoded.exp * 1000);
-    this.username = token_decoded.username;
-    if (typeof this.username === "string") {
-      localStorage.setItem('username', this.username)
-    }
+    localStorage.setItem('superUser', token_decoded.is_staff)
+    localStorage.setItem('username', token_decoded.username)
   }
 }

@@ -10,8 +10,11 @@ import {CreneauService} from "../service/creneau.service";
 })
 export class MesCreneauxComponent implements OnInit {
   lesCreneaux: Creneau[] | undefined
+  isStaff: Boolean | undefined
 
-  constructor(private router: Router, private creneauService: CreneauService) { }
+  constructor(private router: Router, private creneauService: CreneauService) {
+    this.isStaff = localStorage.getItem("superUser") == 'true'
+  }
 
   ngOnInit(): void {
     this.chargerMesCreneaux()

@@ -26,6 +26,9 @@
       <li class="nav-item" *ngIf="token != null">
         <a class="nav-link" routerLink="mesCreneaux" >Mes creneaux</a>
       </li>
+      <li class="nav-item" *ngIf="isStaff">
+        <a class="nav-link" routerLink="VaccinPratiquant" >(Pratiquant) Vacciner</a>
+      </li>
       <li class="nav-item" *ngIf="token == null">
         <a class="nav-link" routerLink="connexion" >Connexion</a>
       </li>

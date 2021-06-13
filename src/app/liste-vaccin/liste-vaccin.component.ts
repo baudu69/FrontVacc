@@ -17,9 +17,11 @@ export class ListeVaccinComponent implements OnInit {
   lesLots: Lot[] | undefined
   afficherForm: Boolean
   noVaccinForm: Number | undefined
+  isStaff: Boolean | undefined
 
   constructor(private router: Router, private vaccinService: VaccinService, private lotService: LotService) {
     this.afficherForm = false
+    this.isStaff = localStorage.getItem("superUser") == 'true'
   }
 
   ngOnInit(): void {

@@ -22,9 +22,11 @@ export class ListeCreneauComponent implements OnInit {
   lotChoisiAjoutCreneau: Number | undefined
   lesLots: Lot[] | undefined
   dateAjoutLot: string | undefined
+  isStaff: Boolean | undefined
 
   constructor(private router: Router, private vaccinService: VaccinService, private creneauService: CreneauService, private lotService: LotService) {
     //this.dateAjoutLot = new Date().toISOString().slice(0, 16);
+    this.isStaff = localStorage.getItem("superUser") == 'true'
   }
 
   ngOnInit(): void {

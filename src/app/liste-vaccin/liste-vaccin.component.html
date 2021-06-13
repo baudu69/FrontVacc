@@ -13,7 +13,7 @@
     <td>{{unVaccin.nomVac}}</td>
     <td>{{unVaccin.nbrDoses}}</td>
     <td>{{unVaccin.tempsEntreDoses}}</td>
-    <td><button (click)="getLesLots(unVaccin.id)">Lots</button></td>
+    <td *ngIf="isStaff"><button (click)="getLesLots(unVaccin.id)">Lots</button></td>
   </tr>
   </tbody>
 </table>

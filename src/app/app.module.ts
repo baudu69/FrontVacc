@@ -13,7 +13,8 @@ import { AuthService } from './service/auth.service';
 import { ListeVaccinComponent } from './liste-vaccin/liste-vaccin.component';
 import { DeconnexionComponent } from './deconnexion/deconnexion.component';
 import { MesCreneauxComponent } from './mes-creneaux/mes-creneaux.component';
-import { InscriptionComponent } from './inscription/inscription.component';    // add this
+import { InscriptionComponent } from './inscription/inscription.component';
+import { PratiquantVaccComponent } from './pratiquant-vacc/pratiquant-vacc.component';    // add this
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { InscriptionComponent } from './inscription/inscription.component';    /
     ListeVaccinComponent,
     DeconnexionComponent,
     MesCreneauxComponent,
-    InscriptionComponent
+    InscriptionComponent,
+    PratiquantVaccComponent
   ],
     imports: [
         BrowserModule,

@@ -9,9 +9,11 @@ export class AppComponent {
   title = 'FrontVacc';
   token: string | null
   username: string | null | undefined
+  isStaff: Boolean | undefined
   constructor() {
     this.token = localStorage.getItem('token')
     this.username = localStorage.getItem("username")
+    this.isStaff = localStorage.getItem("superUser") == 'true'
   }
 
   ngOnInit() {

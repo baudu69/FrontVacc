@@ -22,7 +22,7 @@ export class ConnexionComponent implements OnInit {
     this.serviceAuth.signIn(this.mail, this.mdp).subscribe(
       data => {
         this.serviceAuth.refreshToken()
-          localStorage.setItem('token', data.token);
+        this.serviceAuth.updateData(data.token)
           window.location.href = environment.appURL;
       },
       Error => {
