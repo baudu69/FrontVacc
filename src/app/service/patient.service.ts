@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {Vaccin} from "../metier/Vaccin";
 import {environment} from "../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
 })
-export class VaccinService {
+export class PatientService {
   private httpOptions: any;
 
   constructor(private httpClient: HttpClient) {
@@ -19,11 +18,7 @@ export class VaccinService {
     };
   }
 
-  getUnVaccin(idVaccin: Number | undefined): Observable<any> {
-    return this.httpClient.get<any[]>(environment.apiURL + 'api/vaccin/'+idVaccin, this.httpOptions);
-  }
-
-  getLesVaccins(): Observable<any> {
-    return this.httpClient.get<any[]>(environment.apiURL + 'api/vaccin', this.httpOptions);
+  getLePatient(idPatient: Number | undefined): Observable<any> {
+    return this.httpClient.get(environment.apiURL + 'api/patient/'+idPatient, this.httpOptions)
   }
 }

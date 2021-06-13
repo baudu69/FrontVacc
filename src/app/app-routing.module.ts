@@ -8,6 +8,7 @@ import {ListeVaccinComponent} from "./liste-vaccin/liste-vaccin.component";
 import {DeconnexionComponent} from "./deconnexion/deconnexion.component";
 import {MesCreneauxComponent} from "./mes-creneaux/mes-creneaux.component";
 import {InscriptionComponent} from "./inscription/inscription.component";
+import {PratiquantVaccComponent} from "./pratiquant-vacc/pratiquant-vacc.component";
 
 const routes: Routes = [
   { path: '', component: AccueilComponent, pathMatch: 'full' },
@@ -16,7 +17,8 @@ const routes: Routes = [
   { path: 'listeVaccin', component: ListeVaccinComponent},
   { path: 'deconnexion', component: DeconnexionComponent},
   { path: 'mesCreneaux', component: MesCreneauxComponent},
-  { path: 'inscription', component: InscriptionComponent}
+  { path: 'inscription', component: InscriptionComponent},
+  { path : 'VaccinPratiquant', component: PratiquantVaccComponent}
 ];
 
 @NgModule({

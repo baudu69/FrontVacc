@@ -1,1 +1,25 @@
-<p>pratiquant-vacc works!</p>
+<h1>(Pratiquant) Valider les vaccinations</h1>
+<table class="table table-hover table-responsive-lg">
+  <thead class="thead-1">
+  <th scope="col">Date</th>
+  <th scope="col">Heure</th>
+  <th scope="col"></th>
+  </thead>
+  <tbody id="contenu">
+  <tr class="tr-1" *ngFor="let unCreneau of lesCreneaux">
+    <td>{{unCreneau.dateCreneau != undefined?unCreneau.dateCreneau.getDate() + "/" + unCreneau.dateCreneau.getMonth() + "/" + unCreneau.dateCreneau.getFullYear(): ""}}</td>
+    <td>{{unCreneau.dateCreneau != undefined?unCreneau.dateCreneau.getHours() + ":" + unCreneau.dateCreneau.getMinutes(): ""}}</td>
+    <td><button (click)="chargerInfoCreneau(unCreneau.id)">Details</button></td>
+  </tr>
+  </tbody>
+</table>
+<div *ngIf="leVaccin != undefined && leLot != undefined && leCreneau != undefined && lePatient != undefined">
+  <b>Nom : </b> {{lePatient.Nom}} <br />
+  <b>Prenom : </b> {{lePatient.Prenom}}<br />
+  <b>Mail : </b> {{lePatient.MailPatient}}<br />
+  <b>Date de l'injection : </b> {{leCreneau.dateCreneau != undefined?leCreneau.dateCreneau.getDate() + "/" + leCreneau.dateCreneau.getMonth() + "/" + leCreneau.dateCreneau.getFullYear(): ""}}<br />
+  <b>Heure de l'injection : </b> {{leCreneau.dateCreneau != undefined?leCreneau.dateCreneau.getHours() + ":" + leCreneau.dateCreneau.getMinutes(): ""}}<br />
+  <b>Vaccin : </b> {{leVaccin.nomVac}}<br />
+  <b>No de lot : </b> {{leLot.noLot}}<br />
+  <button>Valider l'injection</button>
+</div>

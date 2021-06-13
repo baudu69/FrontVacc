@@ -20,6 +20,10 @@ export class CreneauService {
     };
   }
 
+  getLesCreneauxPratiquant(): Observable<any> {
+    return this.httpClient.get(environment.apiURL + 'api/creneauPratiquant', this.httpOptions)
+  }
+
   ajouterCreneau(unCreneau: Creneau, date:string): Observable<any> {
     let leCreneau = {
       LotUtilise: unCreneau.LotUtilise,
@@ -42,5 +46,9 @@ export class CreneauService {
 
   getMesCreneaux(): Observable<any> {
     return this.httpClient.get(environment.apiURL + 'api/creneau/mesCreneaux' , this.httpOptions)
+  }
+
+  getLeCreneau(idCreneau : Number | String): Observable<any> {
+    return this.httpClient.get(environment.apiURL + 'api/creneau/id/'+idCreneau, this.httpOptions)
   }
 }

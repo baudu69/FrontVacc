@@ -27,4 +27,8 @@ export class LotService {
   ajouterLot(leLot: Lot): Observable<any> {
     return this.httpClient.post(environment.apiURL + 'api/lot', JSON.stringify(leLot), this.httpOptions)
   }
+
+  getLeLot(idLot: Number | undefined): Observable<any> {
+    return this.httpClient.get(environment.apiURL + 'api/lot/'+idLot, this.httpOptions)
+  }
 }
