@@ -48,6 +48,10 @@ export class CreneauService {
     return this.httpClient.get(environment.apiURL + 'api/creneau/mesCreneaux' , this.httpOptions)
   }
 
+  validerInjection(idCreneau: Number | String | undefined): Observable<any> {
+    return this.httpClient.get(environment.apiURL + 'api/creneau/valider/'+idCreneau, this.httpOptions)
+  }
+
   getLeCreneau(idCreneau : Number | String): Observable<any> {
     return this.httpClient.get(environment.apiURL + 'api/creneau/id/'+idCreneau, this.httpOptions)
   }

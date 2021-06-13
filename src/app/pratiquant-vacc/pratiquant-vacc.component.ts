@@ -26,6 +26,14 @@ export class PratiquantVaccComponent implements OnInit {
     this.chargerLesCreneaux()
   }
 
+  validerInjection(idCreneau: Number | String | undefined) {
+    this.creneauService.validerInjection(idCreneau).subscribe((data) => {
+      if (data.message == 'OK') {
+        this.chargerLesCreneaux()
+      }
+    })
+  }
+
   chargerLesCreneaux() {
     this.creneauService.getLesCreneauxPratiquant().subscribe((data) => {
       this.lesCreneaux = data

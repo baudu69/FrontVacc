@@ -14,7 +14,7 @@
   <tr class="tr-1" *ngFor="let unCreneau of lesCreneaux">
     <td>{{unCreneau.dateCreneau != undefined?unCreneau.dateCreneau.getDate() + "/" + unCreneau.dateCreneau.getMonth() + "/" + unCreneau.dateCreneau.getFullYear(): ""}}</td>
     <td>{{unCreneau.dateCreneau != undefined?unCreneau.dateCreneau.getHours() + ":" + unCreneau.dateCreneau.getMinutes(): ""}}</td>
-    <td *ngIf="isStaff"><button (click)="reserverCreneau(unCreneau.id)">Reserver</button></td>
+    <td><button (click)="reserverCreneau(unCreneau.id)">Reserver</button></td>
   </tr>
   </tbody>
 </table>
