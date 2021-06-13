@@ -7,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccueilComponent implements OnInit {
 
-  constructor() { }
+  connecte: Boolean
+
+  constructor() {
+    this.connecte = localStorage.getItem('username') != undefined
+  }
 
   ngOnInit(): void {
   }

@@ -10,7 +10,8 @@
     <td>{{unCreneau.dateCreneau != undefined?unCreneau.dateCreneau.getDate() + "/" + unCreneau.dateCreneau.getMonth() + "/" + unCreneau.dateCreneau.getFullYear(): ""}}</td>
     <td>{{unCreneau.dateCreneau != undefined?unCreneau.dateCreneau.getHours() + ":" + unCreneau.dateCreneau.getMinutes(): ""}}</td>
     <td>
-      <button (click)="annulerReservation(unCreneau.id)">Annuler</button>
+      <button *ngIf="unCreneau.Pratiquant == undefined" (click)="annulerReservation(unCreneau.id)">Annuler</button>
+      <button disabled *ngIf="unCreneau.Pratiquant != undefined">Termine</button>
     </td>
   </tr>
   </tbody>
